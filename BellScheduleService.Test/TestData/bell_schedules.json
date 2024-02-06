@@ -1,0 +1,844 @@
+[
+  {
+    "Title": "MONDAYS, TUESDAYS, THURSDAYS & FRIDAYS : Regular Day Schedule 2023-24",
+    "Details": [
+      {
+        "Description": "Period 0",
+        "StartTime": "7:13 AM",
+        "EndTime": "8:22 AM",
+        "Length": "69 min"
+      },
+      {
+        "Description": "Period 1 A (AP SCIENCE only)",
+        "StartTime": "7:55 AM",
+        "EndTime": "9:26 AM",
+        "Length": "91 min"
+      },
+      {
+        "Description": "Period 1",
+        "StartTime": "8:30 AM",
+        "EndTime": "9:26 AM",
+        "Length": "56 min"
+      },
+      {
+        "Description": "Period 2",
+        "StartTime": "9:34 AM",
+        "EndTime": "10:30 AM",
+        "Length": "56 min"
+      },
+      {
+        "Description": "Brunch",
+        "StartTime": "10:30 AM",
+        "EndTime": "10:40 AM",
+        "Length": "10 min"
+      },
+      {
+        "Description": "Period 3",
+        "StartTime": "10:48 AM",
+        "EndTime": "11:44 AM",
+        "Length": "56 min"
+      },
+      {
+        "Description": "Period 4",
+        "StartTime": "11:52 AM",
+        "EndTime": "12:48 PM",
+        "Length": "56 min"
+      },
+      {
+        "Description": "Lunch",
+        "StartTime": "12:48 PM",
+        "EndTime": "1:23 PM",
+        "Length": "35 min"
+      },
+      {
+        "Description": "Period 5",
+        "StartTime": "1:31 PM",
+        "EndTime": "2:27 PM",
+        "Length": "56 min"
+      },
+      {
+        "Description": "Period 6",
+        "StartTime": "2:35 PM",
+        "EndTime": "3:30 PM",
+        "Length": "55 min"
+      },
+      {
+        "Description": "Period 6 A (AP SCIENCE only)",
+        "StartTime": "2:35 PM",
+        "EndTime": "3:59 PM",
+        "Length": "84 min"
+      }
+    ]
+  },
+  {
+    "Title": "WEDNESDAYS: Late Start Schedule 2023-24",
+    "Details": [
+      {
+        "Description": "LATE START",
+        "StartTime": "8:30 AM",
+        "EndTime": "9:10 AM",
+        "Length": "40 min"
+      },
+      {
+        "Description": "Period 1",
+        "StartTime": "9:15 AM",
+        "EndTime": "10:05 AM",
+        "Length": "50 min"
+      },
+      {
+        "Description": "Period 2",
+        "StartTime": "10:13 AM",
+        "EndTime": "11:03 AM",
+        "Length": "50 min"
+      },
+      {
+        "Description": "Period 3",
+        "StartTime": "11:11 AM",
+        "EndTime": "12:01 PM",
+        "Length": "50 min"
+      },
+      {
+        "Description": "Lunch",
+        "StartTime": "12:01 PM",
+        "EndTime": "12:36 PM",
+        "Length": "35 min"
+      },
+      {
+        "Description": "Period 4",
+        "StartTime": "12:44 PM",
+        "EndTime": "1:34 PM",
+        "Length": "50 min"
+      },
+      {
+        "Description": "Period 5",
+        "StartTime": "1:42 PM",
+        "EndTime": "2:32 PM",
+        "Length": "50 min"
+      },
+      {
+        "Description": "Period 6",
+        "StartTime": "2:40 PM",
+        "EndTime": "3:30 PM",
+        "Length": "50 min"
+      },
+      {
+        "Description": "Period 6a (AP Science Only)",
+        "StartTime": "2:40 PM",
+        "EndTime": "3:59 PM",
+        "Length": "79 min"
+      }
+    ]
+  },
+  {
+    "Title": "Minimum Day Schedule 2023-24",
+    "Details": [
+      {
+        "Description": "Period 0",
+        "StartTime": "7:52 AM",
+        "EndTime": "8:22 AM",
+        "Length": "30 min"
+      },
+      {
+        "Description": "Period 1A (AP SCIENCE only)",
+        "StartTime": "8:04 AM",
+        "EndTime": "9:00 AM",
+        "Length": "56 min"
+      },
+      {
+        "Description": "Period 1",
+        "StartTime": "8:30 AM",
+        "EndTime": "9:00 AM",
+        "Length": "30 min"
+      },
+      {
+        "Description": "Period 2",
+        "StartTime": "9:08 AM",
+        "EndTime": "9:38 AM",
+        "Length": "30 min"
+      },
+      {
+        "Description": "Period 3",
+        "StartTime": "9:46 AM",
+        "EndTime": "10:16 AM",
+        "Length": "30 min"
+      },
+      {
+        "Description": "Period 4",
+        "StartTime": "10:24 AM",
+        "EndTime": "10:54 AM",
+        "Length": "30 min"
+      },
+      {
+        "Description": "Period 5",
+        "StartTime": "11:02 AM",
+        "EndTime": "11:32 AM",
+        "Length": "30 min"
+      },
+      {
+        "Description": "Period 6",
+        "StartTime": "11:40 AM",
+        "EndTime": "12:10 PM",
+        "Length": "30 min"
+      },
+      {
+        "Description": "Period 6A (AP SCIENCE only)",
+        "StartTime": "11:40 AM",
+        "EndTime": "12:36 PM",
+        "Length": "56 min"
+      }
+    ]
+  },
+  {
+    "Title": "Rally Schedule A (Regular Day) 2023-24",
+    "Details": [
+      {
+        "Description": "Period 0",
+        "StartTime": "7:32 AM",
+        "EndTime": "8:22 AM",
+        "Length": "50 min"
+      },
+      {
+        "Description": "Period 1A (AP SCIENCE only)",
+        "StartTime": "8:08 AM",
+        "EndTime": "9:20 AM",
+        "Length": "72 min"
+      },
+      {
+        "Description": "Period 1",
+        "StartTime": "8:30 AM",
+        "EndTime": "9:20 AM",
+        "Length": "50 min"
+      },
+      {
+        "Description": "Period 2",
+        "StartTime": "9:28 AM",
+        "EndTime": "10:18 AM",
+        "Length": "50 min"
+      },
+      {
+        "Description": "Period 3",
+        "StartTime": "10:26 AM",
+        "EndTime": "11:16 AM",
+        "Length": "50 min"
+      },
+      {
+        "Description": "RALLY A",
+        "StartTime": "11:24 AM",
+        "EndTime": "12:05 PM",
+        "Length": "41 min"
+      },
+      {
+        "Description": "Period 4",
+        "StartTime": "12:13 PM",
+        "EndTime": "12:59 PM",
+        "Length": "46 min"
+      },
+      {
+        "Description": "LUNCH",
+        "StartTime": "12:59 PM",
+        "EndTime": "1:34 PM",
+        "Length": "35 min"
+      },
+      {
+        "Description": "Period 5",
+        "StartTime": "1:42 PM",
+        "EndTime": "2:32 PM",
+        "Length": "50 min"
+      },
+      {
+        "Description": "Period 6",
+        "StartTime": "2:40 PM",
+        "EndTime": "3:30 PM",
+        "Length": "50 min"
+      },
+      {
+        "Description": "Period 6A (AP SCIENCE only)",
+        "StartTime": "2:40 PM",
+        "EndTime": "3:52 PM",
+        "Length": "72 min"
+      }
+    ]
+  },
+  {
+    "Title": "Rally Schedule B (Regular Day) 2023-24",
+    "Details": [
+      {
+        "Description": "Period 0",
+        "StartTime": "7:32 AM",
+        "EndTime": "8:22 AM",
+        "Length": "50 min"
+      },
+      {
+        "Description": "Period 1a (ONLY AP SCIENCE)",
+        "StartTime": "8:08 AM",
+        "EndTime": "9:20 AM",
+        "Length": "72 min"
+      },
+      {
+        "Description": "Period 1",
+        "StartTime": "8:30 AM",
+        "EndTime": "9:20 AM",
+        "Length": "50 min"
+      },
+      {
+        "Description": "Period 2",
+        "StartTime": "9:28 AM",
+        "EndTime": "10:18 AM",
+        "Length": "50 min"
+      },
+      {
+        "Description": "Period 3",
+        "StartTime": "10:26 AM",
+        "EndTime": "11:16 AM",
+        "Length": "50 min"
+      },
+      {
+        "Description": "Period 4",
+        "StartTime": "11:24 AM",
+        "EndTime": "12:10 PM",
+        "Length": "46 min"
+      },
+      {
+        "Description": "RALLY B",
+        "StartTime": "12:18 PM",
+        "EndTime": "12:59 PM",
+        "Length": "41 min"
+      },
+      {
+        "Description": "LUNCH",
+        "StartTime": "12:59 PM",
+        "EndTime": "1:34 PM",
+        "Length": "35 min"
+      },
+      {
+        "Description": "Period 5",
+        "StartTime": "1:42 PM",
+        "EndTime": "2:32 PM",
+        "Length": "50 min"
+      },
+      {
+        "Description": "Period 6",
+        "StartTime": "2:40 PM",
+        "EndTime": "3:30 PM",
+        "Length": "50 min"
+      },
+      {
+        "Description": "Period 6a (ONLY AP SCIENCE)",
+        "StartTime": "2:40 PM",
+        "EndTime": "3:52 PM",
+        "Length": "72 min"
+      }
+    ]
+  },
+  {
+    "Title": "Rally Schedule A (Minimum Day) 2023-24",
+    "Details": [
+      {
+        "Description": "Period 0",
+        "StartTime": "7:50 AM",
+        "EndTime": "8:22 AM",
+        "Length": "32 min"
+      },
+      {
+        "Description": "Period 1A (AP Science Only)",
+        "StartTime": "8:14 AM",
+        "EndTime": "9:02 AM",
+        "Length": "48 min"
+      },
+      {
+        "Description": "Period 1",
+        "StartTime": "8:30 AM",
+        "EndTime": "9:02 AM",
+        "Length": "32 min"
+      },
+      {
+        "Description": "Period 2",
+        "StartTime": "9:10 AM",
+        "EndTime": "9:42 AM",
+        "Length": "32 min"
+      },
+      {
+        "Description": "Period 3",
+        "StartTime": "9:50 AM",
+        "EndTime": "10:22 AM",
+        "Length": "32 min"
+      },
+      {
+        "Description": "1st Rally A",
+        "StartTime": "10:30 AM",
+        "EndTime": "11:08 AM",
+        "Length": "38 min"
+      },
+      {
+        "Description": "Period 4",
+        "StartTime": "11:16 AM",
+        "EndTime": "11:56 AM",
+        "Length": "40 min"
+      },
+      {
+        "Description": "Period 5",
+        "StartTime": "12:04 PM",
+        "EndTime": "12:36 PM",
+        "Length": "32 min"
+      },
+      {
+        "Description": "Period 6",
+        "StartTime": "12:44 PM",
+        "EndTime": "1:16 PM",
+        "Length": "32 min"
+      },
+      {
+        "Description": "Period 6A  (AP Science Only)",
+        "StartTime": "12:44 PM",
+        "EndTime": "1:32 PM",
+        "Length": "48 min"
+      }
+    ]
+  },
+  {
+    "Title": "Rally Schedule B (Minimum Day) 2023-24",
+    "Details": [
+      {
+        "Description": "Period 0",
+        "StartTime": "7:50 AM",
+        "EndTime": "8:22 AM",
+        "Length": "32 min"
+      },
+      {
+        "Description": "Period 1A (AP SCIENCE ONLY)",
+        "StartTime": "8:14 AM",
+        "EndTime": "9:02 AM",
+        "Length": "48 min"
+      },
+      {
+        "Description": "Period 1",
+        "StartTime": "8:30 AM",
+        "EndTime": "9:02 AM",
+        "Length": "32 min"
+      },
+      {
+        "Description": "Period 2",
+        "StartTime": "9:10 AM",
+        "EndTime": "9:42 AM",
+        "Length": "32 min"
+      },
+      {
+        "Description": "Period 3",
+        "StartTime": "9:50 AM",
+        "EndTime": "10:22 AM",
+        "Length": "32 min"
+      },
+      {
+        "Description": "Period 4",
+        "StartTime": "10:30 AM",
+        "EndTime": "11:08 AM",
+        "Length": "38 min"
+      },
+      {
+        "Description": "Rally B",
+        "StartTime": "11:16 AM",
+        "EndTime": "11:56 AM",
+        "Length": "40 min"
+      },
+      {
+        "Description": "Period 5",
+        "StartTime": "12:04 PM",
+        "EndTime": "12:36 PM",
+        "Length": "32 min"
+      },
+      {
+        "Description": "Period 6",
+        "StartTime": "12:44 PM",
+        "EndTime": "1:16 PM",
+        "Length": "32 min"
+      },
+      {
+        "Description": "Period 6A (AP SCIENCE ONLY)",
+        "StartTime": "12:44 PM",
+        "EndTime": "1:32 PM",
+        "Length": "48 min"
+      }
+    ]
+  },
+  {
+    "Title": "Pathways Academy Regular Schedule 2023-24",
+    "Details": [
+      {
+        "Description": "Period 0",
+        "StartTime": "7:13 AM",
+        "EndTime": "8:22 AM",
+        "Length": "69 min"
+      },
+      {
+        "Description": "Block 7",
+        "StartTime": "8:30 AM",
+        "EndTime": "9:58 AM",
+        "Length": "88 min"
+      },
+      {
+        "Description": "Brunch",
+        "StartTime": "9:58 AM",
+        "EndTime": "10:11 AM",
+        "Length": "13 min"
+      },
+      {
+        "Description": "Block 8",
+        "StartTime": "10:16 AM",
+        "EndTime": "11:44 AM",
+        "Length": "88 min"
+      },
+      {
+        "Description": "Period 4",
+        "StartTime": "11:52 AM",
+        "EndTime": "12:48 PM",
+        "Length": "56 min"
+      },
+      {
+        "Description": "Lunch",
+        "StartTime": "12:48 PM",
+        "EndTime": "1:23 PM",
+        "Length": "35 min"
+      },
+      {
+        "Description": "Period 5",
+        "StartTime": "1:31 PM",
+        "EndTime": "2:27 PM",
+        "Length": "56 min"
+      },
+      {
+        "Description": "Period 6",
+        "StartTime": "2:35 PM",
+        "EndTime": "3:30 PM",
+        "Length": "55 min"
+      },
+      {
+        "Description": "Period 6a (AP Science Only)",
+        "StartTime": "2:35 PM",
+        "EndTime": "3:59 PM",
+        "Length": "84 min"
+      }
+    ]
+  },
+  {
+    "Title": "Pathways Academy WEDNESDAYS (Late Start) 2023-24",
+    "Details": [
+      {
+        "Description": "LATE START",
+        "StartTime": "8:30 AM",
+        "EndTime": "9:10 AM",
+        "Length": "40 min"
+      },
+      {
+        "Description": "Block 7",
+        "StartTime": "9:15 AM",
+        "EndTime": "10:34 AM",
+        "Length": "79 min"
+      },
+      {
+        "Description": "Block 8",
+        "StartTime": "10:42 AM",
+        "EndTime": "12:01 PM",
+        "Length": "79 min"
+      },
+      {
+        "Description": "Lunch",
+        "StartTime": "12:01 PM",
+        "EndTime": "12:36 PM",
+        "Length": "35 min"
+      },
+      {
+        "Description": "Period 4",
+        "StartTime": "12:44 PM",
+        "EndTime": "1:34 PM",
+        "Length": "50 min"
+      },
+      {
+        "Description": "Period 5",
+        "StartTime": "1:42 PM",
+        "EndTime": "2:32 PM",
+        "Length": "50 min"
+      },
+      {
+        "Description": "Period 6",
+        "StartTime": "2:40 PM",
+        "EndTime": "3:30 PM",
+        "Length": "50 min"
+      },
+      {
+        "Description": "Period 6a (AP Science Only)",
+        "StartTime": "2:40 PM",
+        "EndTime": "3:59 PM",
+        "Length": "79 min"
+      }
+    ]
+  },
+  {
+    "Title": "Pathways Academy Minimum Day Schedule  2023-24",
+    "Details": [
+      {
+        "Description": "Period 0",
+        "StartTime": "7:52 AM",
+        "EndTime": "8:22 AM",
+        "Length": "30 min"
+      },
+      {
+        "Description": "Block 7",
+        "StartTime": "8:30 AM",
+        "EndTime": "9:19 AM",
+        "Length": "49 min"
+      },
+      {
+        "Description": "Block 8",
+        "StartTime": "9:27 AM",
+        "EndTime": "10:16 AM",
+        "Length": "49 min"
+      },
+      {
+        "Description": "Period 4",
+        "StartTime": "10:24 AM",
+        "EndTime": "10:54 AM",
+        "Length": "30 min"
+      },
+      {
+        "Description": "Period 5",
+        "StartTime": "11:02 AM",
+        "EndTime": "11:32 AM",
+        "Length": "30 min"
+      },
+      {
+        "Description": "Period 6",
+        "StartTime": "11:40 AM",
+        "EndTime": "12:10 PM",
+        "Length": "30 min"
+      },
+      {
+        "Description": "Period 6A (AP SCIENCE only)",
+        "StartTime": "11:40 AM",
+        "EndTime": "12:36 PM",
+        "Length": "56 min"
+      }
+    ]
+  },
+  {
+    "Title": "Pathways Academy Rally Schedule 2023-24",
+    "Details": [
+      {
+        "Description": "Period 0",
+        "StartTime": "7:32 AM",
+        "EndTime": "8:22 AM",
+        "Length": "50 min"
+      },
+      {
+        "Description": "Block 7",
+        "StartTime": "8:30 AM",
+        "EndTime": "9:49 AM",
+        "Length": "79 min"
+      },
+      {
+        "Description": "Block 8",
+        "StartTime": "9:57 AM",
+        "EndTime": "11:16 AM",
+        "Length": "79 min"
+      },
+      {
+        "Description": "Rally A /Period 4",
+        "StartTime": "11:24 AM",
+        "EndTime": "12:05 PM",
+        "Length": "41 min"
+      },
+      {
+        "Description": "Period 4 / Rally B",
+        "StartTime": "12:13 PM",
+        "EndTime": "12:59 PM",
+        "Length": "46 min"
+      },
+      {
+        "Description": "Lunch",
+        "StartTime": "12:59 PM",
+        "EndTime": "1:34 PM",
+        "Length": "35 min"
+      },
+      {
+        "Description": "Period 5",
+        "StartTime": "1:42 PM",
+        "EndTime": "2:32 PM",
+        "Length": "50 min"
+      },
+      {
+        "Description": "Period 6",
+        "StartTime": "2:40 PM",
+        "EndTime": "3:30 PM",
+        "Length": "50 min"
+      },
+      {
+        "Description": "Period 6a (AP Science Only)",
+        "StartTime": "2:40 PM",
+        "EndTime": "3:52 PM",
+        "Length": "72 min"
+      }
+    ]
+  },
+  {
+    "Title": "Pathways Academy Minimum Day Rally Schedule  2023-24",
+    "Details": [
+      {
+        "Description": "Period 0",
+        "StartTime": "7:50 AM",
+        "EndTime": "8:22 AM",
+        "Length": "32 min"
+      },
+      {
+        "Description": "Block 7",
+        "StartTime": "8:30 AM",
+        "EndTime": "9:22 AM",
+        "Length": "52 min"
+      },
+      {
+        "Description": "Block 8",
+        "StartTime": "9:30 AM",
+        "EndTime": "10:22 AM",
+        "Length": "52 min"
+      },
+      {
+        "Description": "Rally A  or 4th Period",
+        "StartTime": "10:30 AM",
+        "EndTime": "11:08 AM",
+        "Length": "38 min"
+      },
+      {
+        "Description": "Rally B  or 4th Period",
+        "StartTime": "11:16 AM",
+        "EndTime": "11:56 AM",
+        "Length": "40 min"
+      },
+      {
+        "Description": "Period 5",
+        "StartTime": "12:04 PM",
+        "EndTime": "12:36 PM",
+        "Length": "32 min"
+      },
+      {
+        "Description": "Period 6",
+        "StartTime": "12:44 PM",
+        "EndTime": "1:16 PM",
+        "Length": "32 min"
+      },
+      {
+        "Description": "Period 6A (AP Science Only)",
+        "StartTime": "12:44 PM",
+        "EndTime": "1:32 PM",
+        "Length": "48 min"
+      }
+    ]
+  },
+  {
+    "Title": "FINAL EXAM (Day 1)",
+    "Details": [
+      {
+        "Description": "FINAL - 0 Period",
+        "StartTime": "8:30 AM",
+        "EndTime": "10:30 AM",
+        "Length": "120 min"
+      },
+      {
+        "Description": "Brunch",
+        "StartTime": "10:30 AM",
+        "EndTime": "10:40 AM",
+        "Length": "10 min"
+      },
+      {
+        "Description": "FINAL - 3rd Period",
+        "StartTime": "10:48 AM",
+        "EndTime": "12:48 PM",
+        "Length": "120 min"
+      },
+      {
+        "Description": "LUNCH",
+        "StartTime": "12:48 PM",
+        "EndTime": "1:23 PM",
+        "Length": "35 min"
+      },
+      {
+        "Description": "FINAL - 6th Period",
+        "StartTime": "1:31 PM",
+        "EndTime": "3:30 PM",
+        "Length": "119 min"
+      }
+    ]
+  },
+  {
+    "Title": "FINAL EXAM (Day 2)",
+    "Details": [
+      {
+        "Description": "FINAL - 1st Period",
+        "StartTime": "8:30 AM",
+        "EndTime": "10:30 AM",
+        "Length": "120 min"
+      },
+      {
+        "Description": "Brunch",
+        "StartTime": "10:30 AM",
+        "EndTime": "10:40 AM",
+        "Length": "10 min"
+      },
+      {
+        "Description": "FINAL - 2nd Period",
+        "StartTime": "10:48 AM",
+        "EndTime": "12:48 PM",
+        "Length": "120 min"
+      },
+      {
+        "Description": "FINAL - 1st Period (Lab)",
+        "StartTime": "7:55 AM",
+        "EndTime": "10:30 AM",
+        "Length": "155 min"
+      }
+    ]
+  },
+  {
+    "Title": "FINAL EXAM (Day 3)",
+    "Details": [
+      {
+        "Description": "FINAL - 4th Period",
+        "StartTime": "8:30 AM",
+        "EndTime": "10:30 AM",
+        "Length": "120 min"
+      },
+      {
+        "Description": "Brunch",
+        "StartTime": "10:30 AM",
+        "EndTime": "10:40 AM",
+        "Length": "10 min"
+      },
+      {
+        "Description": "FINAL - 5th Period",
+        "StartTime": "10:48 AM",
+        "EndTime": "12:48 PM",
+        "Length": "120 min"
+      }
+    ]
+  },
+  {
+    "Title": "Summer School",
+    "Details": [
+      {
+        "Description": "Period 1",
+        "StartTime": "7:30 AM",
+        "EndTime": "10:00 AM",
+        "Length": "150 min"
+      },
+      {
+        "Description": "BRUNCH",
+        "StartTime": "10:00 AM",
+        "EndTime": "10:30 AM",
+        "Length": "30 min"
+      },
+      {
+        "Description": "Period 2",
+        "StartTime": "10:30 AM",
+        "EndTime": "1:00 PM",
+        "Length": "150 min"
+      }
+    ]
+  }
+]
