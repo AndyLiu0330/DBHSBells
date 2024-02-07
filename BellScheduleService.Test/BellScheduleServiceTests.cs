@@ -2,7 +2,7 @@ using RichardSzalay.MockHttp;
 using System.Net;
 using System.Text.Json;
 
-namespace BellScheduleService.Test;
+namespace DBHSBells.Services.Test;
 
 public class BellScheduleServiceTests
 {
@@ -34,7 +34,6 @@ public class BellScheduleServiceTests
 
         // Assert
         var json = JsonSerializer.Serialize(result, new JsonSerializerOptions { WriteIndented = true });
-        // var json = JsonSerializer.Serialize(result, new JsonSerializerOptions { WriteIndented = true, Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping });
         var expectedJson = File.ReadAllText(Path.Combine(GetProjectRootPath(), "TestData", "bell_schedules.json"));
         var expectedJsonObject = JsonDocument.Parse(expectedJson);
         var resultJsonObject = JsonDocument.Parse(json);
