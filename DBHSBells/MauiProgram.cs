@@ -21,7 +21,7 @@ namespace DBHSBells
     		builder.Services.AddBlazorWebViewDeveloperTools();
     		builder.Logging.AddDebug();
 #endif
-            // need to inject the HttpClient into the BellScheduleService
+            builder.Services.AddAntDesign();
             
             // Register HttpClient
             builder.Services.AddSingleton<HttpClient>();

@@ -3,6 +3,7 @@ using AngleSharp.Html.Parser;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using AngleSharp.Dom;
 
 namespace DBHSBells.Services;
 
@@ -22,35 +23,27 @@ public class BellScheduleService
     public async Task<List<Schedule>> GetBellSchedulesAsync()
     {
         var response = await _httpClient.GetAsync("https://dbhs.wvusd.org/apps/bell_schedules/");
-        var html = await response.Content.ReadAsStringAsync();
-        var document = await _parser.ParseDocumentAsync(html);
+        var document = await _parser.ParseDocumentAsync(await response.Content.ReadAsStringAsync());
 
         var schedules = new List<Schedule>();
 
-        var scheduleNodes = document.QuerySelectorAll("table.bell-schedule");
-
-        foreach (var node in scheduleNodes)
+        foreach (var node in document.QuerySelectorAll("table.bell-schedule"))
         {
             var schedule = new Schedule
             {
                 Title = node.QuerySelector("caption a").TextContent,
+                Info =  node.QuerySelector("caption span[data-qa='bell-schedule-info']")?.InnerHtml ?? string.Empty,
                 Details = new List<ScheduleDetail>()
             };
 
-            var detailNodes = node.QuerySelectorAll("tbody tr");
-            foreach (var detailNode in detailNodes)
+            foreach (var detailNode in node.QuerySelectorAll("tbody tr"))
             {
-                var description = detailNode.QuerySelector("td:nth-child(1)").TextContent;
-                var startTime = detailNode.QuerySelector("td:nth-child(2)").TextContent;
-                var endTime = detailNode.QuerySelector("td:nth-child(3)").TextContent;
-                var length = detailNode.QuerySelector("td:nth-child(4)").TextContent;
-
                 schedule.Details.Add(new ScheduleDetail
                 {
-                    Description = description,
-                    StartTime = startTime,
-                    EndTime = endTime,
-                    Length = length
+                    Description = detailNode.QuerySelector("td:nth-child(1)")?.TextContent  ?? string.Empty ,
+                    StartTime = detailNode.QuerySelector("td:nth-child(2)")?.TextContent  ?? string.Empty,
+                    EndTime = detailNode.QuerySelector("td:nth-child(3)")?.TextContent ?? string.Empty,
+                    Length = detailNode.QuerySelector("td:nth-child(4)")?.TextContent ?? string.Empty
                 });
             }
 

@@ -1,6 +1,6 @@
 ﻿@page "/"
 @inject BellScheduleService service
-@if (BellSchedule == null)
+@if (BellSchedule is null)
 {
     <p>
         <em>Loading...</em>
@@ -11,49 +11,73 @@ else
     <h1>DBHS Bell Schedule</h1>
     <p>Local time: @DateTime.Now</p>
 
-    @foreach (var bellSchedule in BellSchedule)
-    {
-        <h2>@bellSchedule.Title</h2>
-        @if (bellSchedule.GetCurrentPeriod(DateTime.Now) >= 0)
+    <Collapse DefaultActiveKey="@(new[] { "0" })" Accordion>
+        @foreach (var bellSchedule in BellSchedule)
         {
-            <p>Current : @bellSchedule.Details[bellSchedule.GetCurrentPeriod(DateTime.Now)].Description</p>
+            // to get the bellSchedule index in BellSchedule
+            <Panel Header=@bellSchedule.Title Key="@BellSchedule.IndexOf(bellSchedule).ToString()">
+                <p>Current : @GetCurrentPeriodDescription(bellSchedule)</p>
+                @* <table> *@
+                @*     <thead> *@
+                @*     <tr> *@
+                @*         <th>Description / Period</th> *@
+                @*         <th>Start Time</th> *@
+                @*         <th>End Time</th> *@
+                @*         <th>Length</th> *@
+                @*     </tr> *@
+                @* *@
+                @*     </thead> *@
+                @*     <tbody> *@
+                @*     @foreach (var detail in bellSchedule.Details) *@
+                @*     { *@
+                @*         <tr> *@
+                @*             <td>@detail.Description</td> *@
+                @*             <td>@detail.StartTime</td> *@
+                @*             <td>@detail.EndTime</td> *@
+                @*             <td>@detail.Length</td> *@
+                @*         </tr> *@
+                @*     } *@
+                @*     </tbody> *@
+                @* </table> *@
+
+                <div>
+                    <Steps size="small" Direction="vertical" Current="@bellSchedule.GetCurrentPeriod(DateTime.Now)">
+                        @foreach (var detail in bellSchedule.Details)
+                        {
+                            <Step Title="@($"{detail.Description}({detail.Length})")" Description="@($"{detail.StartTime}-{detail.EndTime}")" Icon="@GetIcon(detail.Description)"/>
+                        }
+                    </Steps>
+                </div>
+            </Panel>
         }
-        else
-        {
-            <p>Current : No class</p>
-        }
-
-        <table>
-            <thead>
-
-            <tr>
-                <th>Description / Period</th>
-                <th>Start Time</th>
-                <th>End Time</th>
-                <th>Length</th>
-            </tr>
-
-            </thead>
-            <tbody>
-            @foreach (var detail in bellSchedule.Details)
-            {
-                <tr>
-                    <td>@detail.Description</td>
-                    <td>@detail.StartTime</td>
-                    <td>@detail.EndTime</td>
-                    <td>@detail.Length</td>
-                </tr>
-            }
-            </tbody>
-        </table>
-    }
+    </Collapse>
 }
 
 @code {
     private List<Schedule> BellSchedule;
+    private int CurrentPeriod = -1;
 
     protected override async Task OnInitializedAsync()
     {
         BellSchedule = await service.GetBellSchedulesAsync();
+        CurrentPeriod = BellSchedule[0].GetCurrentPeriod(DateTime.Now);
     }
+    
+    private string GetCurrentPeriodDescription(Schedule bellSchedule)
+    {
+        var currentPeriod = bellSchedule.GetCurrentPeriod(DateTime.Now);
+        return currentPeriod >= 0 ? bellSchedule.Details[currentPeriod].Description : "No class";
+    }
+    
+    private string GetIcon(string description)
+    {
+        return description switch
+        {
+            var d when d.Contains("Period") => "book",
+            var d when d.Contains("Lunch") || d.Contains("Brunch") => "coffee",
+            var d when d.Contains("Final") => "lock",
+            _ => "info"
+        };
+    }
+
 }
