@@ -1,0 +1,52 @@
+﻿@page "/Setting"
+<h3>Setting</h3>
+
+<div>
+    <Switch @bind-Checked="@switches["p0"]" OnChange=@(e =>ToggleSwitch(e, "p0"))>
+        <CheckedChildrenTemplate>
+            <Icon Type="check"></Icon>
+        </CheckedChildrenTemplate>
+        <UnCheckedChildrenTemplate>
+            <Icon Type="close"></Icon>
+        </UnCheckedChildrenTemplate>
+    </Switch>Period 0<br/>
+
+    <Switch @bind-Checked="@switches["p1"]" OnChange=@(e =>ToggleSwitch(e,"p1"))>
+        <CheckedChildrenTemplate>
+            <Icon Type="check"></Icon>
+        </CheckedChildrenTemplate>
+        <UnCheckedChildrenTemplate>
+            <Icon Type="close"></Icon>
+        </UnCheckedChildrenTemplate>
+    </Switch>Period 1A (AP SCIENCE only)<br/>
+
+    <Switch @bind-Checked="@switches["p6"]" OnChange=@(e =>ToggleSwitch(e, "p6"))>
+        <CheckedChildrenTemplate>
+            <Icon Type="check"></Icon>
+        </CheckedChildrenTemplate>
+        <UnCheckedChildrenTemplate>
+            <Icon Type="close"></Icon>
+        </UnCheckedChildrenTemplate>
+    </Switch>Period 6A (AP SCIENCE only)<br/>
+
+</div>
+
+@code {
+    private Dictionary<string, bool> switches = new Dictionary<string, bool>();
+    private List<string> keys = new List<string> { "p0", "p1", "p6" };
+
+    protected override Task OnInitializedAsync()
+    {
+        foreach (var key in keys)
+        {
+            switches[key] = Preferences.Get(key, false);
+        }
+        return base.OnInitializedAsync();
+    }
+
+    private void ToggleSwitch(bool e, string switchName)
+    {
+       switches[switchName] = e;
+       Preferences.Set(switchName, e);
+    }
+}
