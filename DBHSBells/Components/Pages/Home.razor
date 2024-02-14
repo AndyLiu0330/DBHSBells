@@ -65,7 +65,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        BellSchedule = await service.GetBellSchedulesAsync();
+        BellSchedule = await service.GetBellSchedulesAsync(Preferences.Get("Sync", false));
         dateTime = DateTime.Now;
         _currentPeriod = BellSchedule[0].GetCurrentPeriod(dateTime);
     }

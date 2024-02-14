@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using AngleSharp.Dom;
+using AngleSharp.Html.Dom;
 using Microsoft.Maui.Storage;
 
 namespace DBHSBells.Services;
@@ -21,13 +22,32 @@ public class BellScheduleService
         _parser = new HtmlParser();
     }
 
-    public async Task<List<Schedule>> GetBellSchedulesAsync()
+    public async Task<List<Schedule>> GetBellSchedulesAsync(bool forceRefresh = false)
     {
-        var response = await _httpClient.GetAsync("https://dbhs.wvusd.org/apps/bell_schedules/");
-        var document = await _parser.ParseDocumentAsync(await response.Content.ReadAsStringAsync());
-
         var schedules = new List<Schedule>();
+        IHtmlDocument document;
+        
+        // check if Preferences has the bell_schedules
+        if (Preferences.ContainsKey("bell_schedules") && !forceRefresh)
+        {
+            var filePath = Preferences.Get("bell_schedules", string.Empty);
+            var fileContent = await File.ReadAllTextAsync(filePath);
+            document = await _parser.ParseDocumentAsync(fileContent);
+        }
+        else
+        {
+            var response = await _httpClient.GetAsync("https://dbhs.wvusd.org/apps/bell_schedules/");
+            var htmlContent = await response.Content.ReadAsStringAsync();
+            document = await _parser.ParseDocumentAsync(htmlContent);
 
+            // Save the HTML content to a file
+            var filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "bell_schedules.html");
+            await File.WriteAllTextAsync(filePath, htmlContent);
+
+            // Save the file path to Preferences
+            Preferences.Set("bell_schedules", filePath);
+        }
+        
         foreach (var node in document.QuerySelectorAll("table.bell-schedule"))
         {
             var schedule = new Schedule
