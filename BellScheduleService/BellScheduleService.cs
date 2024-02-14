@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using AngleSharp.Dom;
+using Microsoft.Maui.Storage;
 
 namespace DBHSBells.Services;
 
@@ -32,7 +33,7 @@ public class BellScheduleService
             var schedule = new Schedule
             {
                 Title = node.QuerySelector("caption a").TextContent,
-                Info =  node.QuerySelector("caption span[data-qa='bell-schedule-info']")?.InnerHtml ?? string.Empty,
+                Info = node.QuerySelector("caption span[data-qa='bell-schedule-info']")?.InnerHtml ?? string.Empty,
                 Details = new List<ScheduleDetail>()
             };
 
@@ -40,18 +41,21 @@ public class BellScheduleService
             {
                 schedule.Details.Add(new ScheduleDetail
                 {
-                    Description = detailNode.QuerySelector("td:nth-child(1)")?.TextContent  ?? string.Empty ,
-                    StartTime = detailNode.QuerySelector("td:nth-child(2)")?.TextContent  ?? string.Empty,
+                    Description = detailNode.QuerySelector("td:nth-child(1)")?.TextContent ?? string.Empty,
+                    StartTime = detailNode.QuerySelector("td:nth-child(2)")?.TextContent ?? string.Empty,
                     EndTime = detailNode.QuerySelector("td:nth-child(3)")?.TextContent ?? string.Empty,
-                    Length = detailNode.QuerySelector("td:nth-child(4)")?.TextContent ?? string.Empty
+                    Length = detailNode.QuerySelector("td:nth-child(4)")?.TextContent ?? string.Empty,
+                    // Enabled = GetEnableFromPrefreence(detailNode.QuerySelector("td:nth-child(1)")?.TextContent ??
+                                                      // string.Empty),
                 });
             }
-
-            schedules.Add(schedule);
+            
+           schedule.SetEnableForDetailsType();
+           schedules.Add(schedule);
         }
 
         return schedules;
     }
 
-    
+
 }

@@ -9,7 +9,7 @@
 else
 {
     <h1>DBHS Bell Schedule</h1>
-    <p>Local time: @DateTime.Now</p>
+    <p>Local time: @dateTime</p>
 
     <Collapse DefaultActiveKey="@(new[] { "0" })" Accordion>
         @foreach (var bellSchedule in BellSchedule)
@@ -17,58 +17,65 @@ else
             // to get the bellSchedule index in BellSchedule
             <Panel Header=@bellSchedule.Title Key="@BellSchedule.IndexOf(bellSchedule).ToString()">
                 <p>Current : @GetCurrentPeriodDescription(bellSchedule)</p>
-                @* <table> *@
-                @*     <thead> *@
-                @*     <tr> *@
-                @*         <th>Description / Period</th> *@
-                @*         <th>Start Time</th> *@
-                @*         <th>End Time</th> *@
-                @*         <th>Length</th> *@
-                @*     </tr> *@
-                @* *@
-                @*     </thead> *@
-                @*     <tbody> *@
-                @*     @foreach (var detail in bellSchedule.Details) *@
-                @*     { *@
-                @*         <tr> *@
-                @*             <td>@detail.Description</td> *@
-                @*             <td>@detail.StartTime</td> *@
-                @*             <td>@detail.EndTime</td> *@
-                @*             <td>@detail.Length</td> *@
-                @*         </tr> *@
-                @*     } *@
-                @*     </tbody> *@
-                @* </table> *@
+                <table>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Description / Period</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                            <th>Length</th>
+                        </tr>
 
-                <div>
-                    <Steps size="small" Direction="vertical" Current="@bellSchedule.GetCurrentPeriod(DateTime.Now)">
+                        </thead>
+                        <tbody>
                         @foreach (var detail in bellSchedule.Details)
                         {
-                            <Step Title="@($"{detail.Description}({detail.Length})")" Description="@($"{detail.StartTime}-{detail.EndTime}")" Icon="@GetIcon(detail.Description)"/>
+                            var rowClass = detail.Enabled ? "" : "disabled-row";
+
+                            <tr class="@rowClass">
+                                <td>@detail.Description</td>
+                                <td>@detail.StartTime</td>
+                                <td>@detail.EndTime</td>
+                                <td>@detail.Length</td>
+                            </tr>
                         }
-                    </Steps>
-                </div>
+                        </tbody>
+                    </table>
+                </table>
+
+                <Timeline Mode="@TimelineMode.Left">
+                    @foreach (var detail in bellSchedule.Details.Where(d => d.Enabled == true))
+                    {
+                        <TimelineItem Color="@GetColor(BellSchedule.IndexOf(bellSchedule), detail)" Label="@detail.StartTime">
+                            @detail.Description
+                        </TimelineItem>
+                        <TimelineItem Color="@GetColor(BellSchedule.IndexOf(bellSchedule), detail)" Label="@detail.EndTime"> End </TimelineItem>
+                    }
+                </Timeline>
             </Panel>
         }
     </Collapse>
 }
 
 @code {
-    private List<Schedule> BellSchedule;
-    private int CurrentPeriod = -1;
+    private List<Schedule>? BellSchedule = null;
+    private int _currentPeriod = -1;
+    DateTime dateTime;
 
     protected override async Task OnInitializedAsync()
     {
         BellSchedule = await service.GetBellSchedulesAsync();
-        CurrentPeriod = BellSchedule[0].GetCurrentPeriod(DateTime.Now);
+        dateTime = DateTime.Now;
+        _currentPeriod = BellSchedule[0].GetCurrentPeriod(dateTime);
     }
-    
+
     private string GetCurrentPeriodDescription(Schedule bellSchedule)
     {
-        var currentPeriod = bellSchedule.GetCurrentPeriod(DateTime.Now);
+        var currentPeriod = bellSchedule.GetCurrentPeriod(dateTime);
         return currentPeriod >= 0 ? bellSchedule.Details[currentPeriod].Description : "No class";
     }
-    
+
     private string GetIcon(string description)
     {
         return description switch
@@ -77,6 +84,26 @@ else
             var d when d.Contains("Lunch") || d.Contains("Brunch") => "coffee",
             var d when d.Contains("Final") => "lock",
             _ => "info"
+        };
+    }
+
+    private string GetColor(int indexOf, ScheduleDetail detail)
+    {
+        var index = BellSchedule[indexOf].Details.IndexOf(detail);
+        _currentPeriod = BellSchedule[indexOf].GetCurrentPeriod(dateTime);
+        // if _currentPeriod is -1 or -2, it means no class, then return "gray"
+        // if index is equal to _currentPeriod, it means current class, then return "red"
+        // if index is less than _currentPeriod, it means past class, then return "green"
+        // if index is greater than _currentPeriod, it means future class, then return "blue"
+        return _currentPeriod switch
+        {
+            -1 => "gray",
+            -2 => "gray",
+            // _ when index == _currentPeriod => "red",
+            _ when index == _currentPeriod => "green",
+            _ when index < _currentPeriod => "green",
+            _ when index > _currentPeriod => "blue",
+            _ => "gray"
         };
     }
 
