@@ -73,7 +73,18 @@ else
     private string GetCurrentPeriodDescription(Schedule bellSchedule)
     {
         var currentPeriod = bellSchedule.GetCurrentPeriod(dateTime);
-        return currentPeriod >= 0 ? bellSchedule.Details[currentPeriod].Description : "No class";
+        // return currentPeriod >= 0 ? bellSchedule.Details[currentPeriod].Description : "Not in class period";
+        // to discard the period more if the current period is < 0
+        if (currentPeriod >= 0)
+            return bellSchedule.Details[currentPeriod].Description;
+        else if (currentPeriod == -1)
+            return "Before school";
+        else if (currentPeriod == -2)
+            return "After school";
+        else if (currentPeriod == -3)
+            return "No school";
+        else
+            return "Not in class period";
     }
 
     private string GetIcon(string description)

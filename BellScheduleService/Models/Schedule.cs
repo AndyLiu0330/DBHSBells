@@ -51,13 +51,24 @@ public class Schedule
         var nowTime = now.TimeOfDay;
         // to modify the rules
         // 0. if now is before the first detail's start time, return -1
+        //    if now is after the last detail's end time, return -2
+        //    if now is Saturday or Sunday, return -3
         // 1. if now is between the start and end time of a detail, return the currentPeriod
         // 2. if now is between the previous detail's end time and the current detail's start time, return the currentPeriod
-        // 3. if now is after the last detail's end time, return -2
+        
+        if (now.DayOfWeek == DayOfWeek.Saturday || now.DayOfWeek == DayOfWeek.Sunday)
+        {
+            return -3;
+        }
 
         if (nowTime < DateTime.Parse(this.Details[0].StartTime).TimeOfDay)
         {
             return -1;
+        }
+        
+        if (nowTime > DateTime.Parse(this.Details[this.Details.Count - 1].EndTime).TimeOfDay)
+        {
+            return -2;
         }
 
         for (int i = 0; i < this.Details.Count; i++)
@@ -93,10 +104,7 @@ public class Schedule
             // }
         }
 
-        if (nowTime > DateTime.Parse(this.Details[this.Details.Count - 1].EndTime).TimeOfDay)
-        {
-            return -2;
-        }
+
 
         return -100;
     }
