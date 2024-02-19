@@ -79,4 +79,28 @@ public class BellScheduleServiceTests
         // Act & Assert
         await Assert.ThrowsAsync<HttpRequestException>(() => _bellScheduleService.GetBellSchedulesAsync());
     }
+    
+    // test for GetCurrentPeriod, use the now and expected result as input for the fact
+    // 1. now is before the first detail's start time
+    // 2. now is after the last detail's end time
+    // 3. now is Saturday or Sunday
+    // 4. now is between the start and end time of a detail
+    // 5. now is between the previous detail's end time and the current detail's start time
+    
+    [Theory]
+    [InlineData("2022-01-01 07:00:00", -1)]
+    [InlineData("2022-01-01 15:00:00", -2)]
+    [InlineData("2022-01-01 12:00:00", -3)]  
+    public async Task GetCurrentPeriod(string nowString, int expectedResult)
+    {
+        // Arrange
+        var now = DateTime.Parse(nowString);
+        var result = await _bellScheduleService.GetBellSchedulesAsync();
+
+        // Act
+        var period = result[0].GetCurrentPeriod(now);
+
+        // Assert
+        Assert.Equal(expectedResult, period);
+    }
 }
