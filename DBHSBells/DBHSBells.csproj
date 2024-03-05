@@ -25,7 +25,7 @@
         <ApplicationTitle>DBHSBells</ApplicationTitle>
 
         <!-- App Identifier -->
-        <ApplicationId>com.companyname.dbhsbells</ApplicationId>
+        <ApplicationId>app.chienliu.dbhsbells</ApplicationId>
 
         <!-- Versions -->
         <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
