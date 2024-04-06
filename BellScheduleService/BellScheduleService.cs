@@ -9,11 +9,18 @@ using Microsoft.Maui.Storage;
 
 namespace DBHSBells.Services;
 
+/// <summary>
+/// Service for retrieving bell schedules.
+/// </summary>
 public class BellScheduleService
 {
     private readonly HttpClient _httpClient;
     private readonly HtmlParser _parser;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="BellScheduleService"/> class.
+    /// </summary>
+    /// <param name="httpClient">The HttpClient used for making HTTP requests.</param>
     public BellScheduleService(HttpClient httpClient)
     {
         _httpClient = httpClient;
@@ -22,11 +29,15 @@ public class BellScheduleService
         _parser = new HtmlParser();
     }
 
+    /// <summary>
+    /// Retrieves the bell schedules from the school website.
+    /// </summary>
+    /// <param name="forceRefresh">If true, ignores any cached schedules and fetches the schedules from the website. If false and there are cached schedules, uses the cached schedules.</param>
     public async Task<List<Schedule>> GetBellSchedulesAsync(bool forceRefresh = false)
     {
         var schedules = new List<Schedule>();
         IHtmlDocument document;
-        
+
         // check if Preferences has the bell_schedules
         if (Preferences.ContainsKey("bell_schedules") && !forceRefresh)
         {
@@ -41,13 +52,14 @@ public class BellScheduleService
             document = await _parser.ParseDocumentAsync(htmlContent);
 
             // Save the HTML content to a file
-            var filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "bell_schedules.html");
+            var filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                "bell_schedules.html");
             await File.WriteAllTextAsync(filePath, htmlContent);
 
             // Save the file path to Preferences
             Preferences.Set("bell_schedules", filePath);
         }
-        
+
         foreach (var node in document.QuerySelectorAll("table.bell-schedule"))
         {
             var schedule = new Schedule
@@ -66,16 +78,14 @@ public class BellScheduleService
                     EndTime = detailNode.QuerySelector("td:nth-child(3)")?.TextContent ?? string.Empty,
                     Length = detailNode.QuerySelector("td:nth-child(4)")?.TextContent ?? string.Empty,
                     // Enabled = GetEnableFromPrefreence(detailNode.QuerySelector("td:nth-child(1)")?.TextContent ??
-                                                      // string.Empty),
+                    // string.Empty),
                 });
             }
-            
-           schedule.SetEnableForDetailsType();
-           schedules.Add(schedule);
+
+            schedule.SetEnableForDetailsType();
+            schedules.Add(schedule);
         }
 
         return schedules;
     }
-
-
 }
