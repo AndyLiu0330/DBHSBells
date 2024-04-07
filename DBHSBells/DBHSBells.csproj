@@ -68,5 +68,9 @@
     <ItemGroup>
       <ProjectReference Include="..\BellScheduleService\BellScheduleService.csproj" />
     </ItemGroup>
+	
+	<ItemGroup>
+      <None Include="..\README.md" Pack="true" PackagePath="" />
+	</ItemGroup>
 
 </Project>
